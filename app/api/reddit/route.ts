@@ -59,7 +59,7 @@ export async function POST(req: NextRequest) {
   // Always add some fallbacks based on common marketing/SEO subreddits
   const fallbackSubreddits = ['entrepreneur', 'smallbusiness', 'SEO', 'startups', 'marketing']
 
-  const allSubreddits = [...new Set([...subredditList, ...fallbackSubreddits])].slice(0, 5)
+  const allSubreddits = Array.from(new Set([...subredditList, ...fallbackSubreddits])).slice(0, 5)
 
   try {
     // Run searches in parallel
